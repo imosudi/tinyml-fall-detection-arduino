@@ -98,28 +98,9 @@ Install Python dependencies:
 python data_capture.py
 ```
 
-
-Connected to Arduino.
-
-Available Labels:
-  0: STATIONARY
-  1: WALKING
-
-Select label index (q to quit): 
-
-5. Select the label index and recording duration.
-
-Connected to Arduino.
-
-Available Labels:
-  0: STATIONARY
-  1: WALKING
-
-Select label index (q to quit): 1
-Recording duration (seconds): 
-
-6. The script sends the selected label to the Arduino and waits for a confirmation response.
-7. Recorded CSV files are saved to `device_native_dataset/`.
+6. Select the label index and recording duration.
+7. The script sends the selected label to the Arduino and waits for a confirmation response.
+8. Recorded CSV files are saved to `device_native_dataset/`.
 
 ## Notes on data capture
 
@@ -139,6 +120,18 @@ Several notebooks are included for experimentation and quantization:
 - `device_native_training.ipynb`
 
 Use these notebooks to explore feature engineering, model training, and TFLite quantization for deployment.
+
+## Current challenge
+
+The current classifier behavior shows a one-class prediction problem. The confusion matrix indicates the model is predicting only `STATIONARY`:
+
+True Class	Predicted STATIONARY	Predicted WALKING
+STATIONARY	120	0
+WALKING	0	0
+
+This means the model correctly classified 120 `STATIONARY` samples, but it did not produce any `WALKING` predictions.
+
+Note: Already being resolved
 
 ## Deployment
 
