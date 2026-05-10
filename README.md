@@ -1,5 +1,39 @@
 # tinyml-fall-detection-arduino
 
+![Python](https://img.shields.io/badge/python-3.10%2B-blue?logo=python)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-FF6F00?logo=tensorflow&logoColor=white)
+![TensorFlow Lite](https://img.shields.io/badge/TFLite-Micro-orange)
+![TinyML](https://img.shields.io/badge/TinyML-Embedded_AI-green)
+![Arduino](https://img.shields.io/badge/Arduino-Nano_33_BLE_Sense_Rev2-00979D?logo=arduino&logoColor=white)
+![Platform](https://img.shields.io/badge/Platform-ARM_Cortex--M4-blueviolet)
+![MCU](https://img.shields.io/badge/MCU-nRF52840-red)
+![Sensor](https://img.shields.io/badge/Sensor-BMI270_IMU-success)
+![Edge AI](https://img.shields.io/badge/Edge_AI-Real_Time-informational)
+![Activity Recognition](https://img.shields.io/badge/HAR-Activity_Recognition-yellowgreen)
+![Fall Detection](https://img.shields.io/badge/Fall-Detection-critical)
+![Inference](https://img.shields.io/badge/Inference-On_Device-brightgreen)
+![Dataset](https://img.shields.io/badge/Dataset-UCI_HAR-lightgrey)
+![Device Native](https://img.shields.io/badge/Data-Device_Native-blue)
+![Quantization](https://img.shields.io/badge/Quantization-INT8-orange)
+![Framework](https://img.shields.io/badge/Framework-TFLite_Micro-black)
+![Google Colab](https://img.shields.io/badge/Google-Colab-F9AB00?logo=googlecolab&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?logo=jupyter&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-Ubuntu-E95420?logo=ubuntu&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Status](https://img.shields.io/badge/Status-Research_Prototype-blue)
+![Research](https://img.shields.io/badge/Research-TinyML-important)
+![Latency](https://img.shields.io/badge/Latency-<50ms-success)
+![Sampling Rate](https://img.shields.io/badge/Sampling-50Hz-blue)
+![Memory](https://img.shields.io/badge/SRAM-Constrained-red)
+![Deployment](https://img.shields.io/badge/Deployment-Microcontroller-success)
+![Serial Logging](https://img.shields.io/badge/Serial-CSV_Logging-lightgrey)
+![Model](https://img.shields.io/badge/Model-Fully_Connected_NN-blue)
+![Feature Engineering](https://img.shields.io/badge/Feature-Engineered-yellow)
+![Edge Computing](https://img.shields.io/badge/Edge-Computing-9cf)
+![IoT](https://img.shields.io/badge/IoT-Smart_Systems-ff69b4)
+![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen)
+![Made With](https://img.shields.io/badge/Made_with-Colab-orange)
+
 Real-time fall and activity detection on an Arduino Nano 33 BLE Sense Rev2 using TinyML.
 
 This repository demonstrates an end-to-end TinyML workflow for IMU-based human activity recognition:
@@ -104,3 +138,15 @@ This repository is focused on dataset collection and model prototyping. The next
 - Build a TinyML workflow for human activity and fall detection
 - Enable efficient int8 inference on Arduino hardware
 - Support future extension to UCI-HAR style activity classes
+
+
+
+## License
+
+This project is licensed under the **BSD 3-Clause License**. See [LICENSE](./LICENSE) for details.
+
+## Author
+
+**Mosudi Isiaka O.**  
+📧 [mosudi.isiaka@gmail.com](mailto:mosudi.isiaka@gmail.com)  
+💻 [https://github.com/imosudi](https://github.com/imosudi)
