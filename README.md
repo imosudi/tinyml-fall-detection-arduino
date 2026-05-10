@@ -44,13 +44,23 @@ This repository demonstrates an end-to-end TinyML workflow for IMU-based human a
 - Int8 quantization for TFLite Micro deployment
 - Arduino sketch for real-time labeled IMU logging
 
-## Repository contents
+## Project structure
 
-- `arduino_data_logger.ino` - Arduino Nano 33 BLE Sense Rev2 sketch for IMU data logging.
-- `data_capture.py` - Serial data capture script that labels data recordings and writes CSV files.
-- `device_native_dataset/` - Recorded device-native IMU dataset files.
-- `requirements.txt` - Python dependency list.
-- `*.ipynb` - Prototype and quantized model training notebooks.
+```
+tinyml-fall-detection-arduino
+├── arduino_data_logger
+│   └── arduino_data_logger.ino
+├── data_capture.py
+├── device_native_dataset
+│   ├── STATIONARY_20260510_194427.csv
+│   └── WALKING_20260510_193844.csv
+├── device_native_training.ipynb
+├── LICENSE
+├── README.md
+├── requirements.txt
+├── screenshots
+│   └── arduino_data_logger_upload.png
+```
 
 ## Getting started
 
