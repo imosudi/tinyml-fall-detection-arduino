@@ -73,6 +73,8 @@ pip install -r requirements.txt
 ```
 
 > If you already have the repository checked out, run the `venv` and install steps from inside the project folder.
+>
+> **Note:** `requirements.txt` only includes dependencies for `data_capture.py` (e.g., `pyserial`). The notebooks were developed and run on Google Colab, so they require additional packages like TensorFlow, NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn, etc. Install them separately if running notebooks locally.
 
 ## Requirements
 
