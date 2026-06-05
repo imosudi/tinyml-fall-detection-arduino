@@ -123,7 +123,7 @@ def markdown_to_html(md_file):
     <body>
         {html_content}
         <div class="footer">
-            <p>Generated on 2026-05-06 | FH Technikum Wien AI-IoT Project © [Mosudi I. O.](https://github.com/imosudi/tinyml-fall-detection-arduino)</p>
+            <p>Generated from Markdown on 2026-05-06 | FH Technikum Wien AI-IoT Project © [Mosudi I. O.](https://github.com/imosudi/tinyml-fall-detection-arduino)</p>
         </div>
     </body>
     </html>
@@ -156,7 +156,7 @@ if __name__ == "__main__":
         try:
             generate_pdf(str(md_file), str(pdf_file))
             print(f"\n✓ PDF generated successfully: {pdf_file}")
-            print(f"\n📸 To include screenshots in the PDF:")
+            print(f"\n📸 To include images in the PDF:")
             print(f"   1. Place PNG/JPG images in: {images}/")
             print(f"   2. Name them:  architecture_block_diagram.png, architecture_block_diagram.svg,  SRAM_layout.png, etc.")
             print(f"   3. Re-run this script: python generate_pdf.py")

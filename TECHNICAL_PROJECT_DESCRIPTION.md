@@ -230,7 +230,7 @@ Mitigation strategies include held-out session evaluation, conservative performa
 
 ## 13. Recommended Next Steps
 
-To advance the project from prototype to robust deployment, the next milestones should be:
+To advance my project from a prototype towards a robust and deployable solution, the next milestones will focus on improving the dataset, model performance, and real-world validation. Specifically, we plan to:
 
 1. Expand the dataset to include more realistic animal motion and recovery-related behaviours.
 2. Improve model robustness to reduce one-class or misclassification behaviour.
