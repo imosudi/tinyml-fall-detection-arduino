@@ -36,13 +36,47 @@
 
 Real-time fall and activity detection on an Arduino Nano 33 BLE Sense Rev2 using TinyML.
 
-This repository demonstrates an end-to-end TinyML workflow for IMU-based human activity recognition:
+This repository demonstrates an end-to-end TinyML workflow for IMU-based activity recognition, and it is being adapted for veterinary post-operative monitoring. The same lightweight edge pipeline can support continuous recovery assessment for animals using a compact sensor collar or harness instead of subjective manual observation.
+
+## System overview and memory layout
+
+The project uses an event-driven TinyML pipeline that begins at the IMU, passes through a pre-filter gate, windowing, feature extraction, and quantized on-device inference. The visual block diagram is available in [images/architecture_block_diagram.png](images/architecture_block_diagram.png) and [images/architecture_block_diagram.svg](images/architecture_block_diagram.svg).
+
+To understand deployment feasibility on the Nano 33 BLE Sense Rev2, the SRAM allocation view is provided in [images/SRAM_layout.png](images/SRAM_layout.png) and [images/SRAM_layout.svg](images/SRAM_layout.svg). These diagrams are important because the tensor arena, interpreter runtime, feature buffers, and stack usage must all fit inside the constrained SRAM budget of the microcontroller.
 
 - Device-native IMU data collection from Arduino
 - Python-based dataset capture and CSV export
 - Notebook-driven TensorFlow model development
 - Int8 quantization for TFLite Micro deployment
 - Arduino sketch for real-time labeled IMU logging
+
+## Veterinary application focus
+
+### 1. Objective: Continuous Post-Operative Monitoring
+Traditionally, assessing an animal's recovery relies on periodic, subjective visual observations by clinic staff. By adapting this system, a lightweight sensor collar or harness can continuously track a recovering animal 24/7 without human bias.
+
+- Sedation and pain tracking: the system can classify subtle behavioral shifts. An animal experiencing breakthrough pain or prolonged sedation will show highly restricted movement, altering the expected baseline ratio of Stationary versus active states.
+- Wound and device protection: sudden, repetitive jerk movements captured by the IMU can flag an animal aggressively scratching, biting, or shaking its head against a surgical site, cast, or Elizabethan collar.
+
+### 2. Automated Animal Fall and Orthopedic Distress Alerts
+For large animals (such as horses or cattle recovering from anesthesia) or small animals following major orthopedic or neurological surgeries, a fall can be catastrophic.
+
+- Immediate trauma flags: using the pipeline's real-time fall detection algorithm, the system can instantly identify a high-G impact or a sudden change in spatial orientation followed by prolonged immobility.
+- Recumbency warnings: if a postoperative patient falls or collapses and remains completely stationary for an abnormal duration, the edge device can trigger an automated alert to notify clinic staff immediately.
+
+### 3. Quantitative Mobility and Gait Assessment
+During orthopedic rehabilitation, a veterinarian needs to know if an animal is increasing its weight-bearing activity over time.
+
+- Activity budgeting: the system can calculate a daily activity budget by quantifying how many minutes the animal spends walking versus resting.
+- Gait integrity: changes in acceleration magnitude and variability during walking windows can act as a digital biomarker for lameness or asymmetric limb favoring.
+
+### 4. Non-Invasive, Low-Stress Edge Intelligence (TinyML)
+Animals in recovery are highly sensitive to stress, and traditional monitoring setups are often impractical.
+
+- Ultra-lightweight design: the pipeline optimizes the neural network down to a compact INT8 TFLite Micro binary, allowing the intelligence loop to run directly on-device.
+- Long battery life and low stress: the device can process data locally and only transmit alerts when anomalies occur, keeping the footprint small and unobtrusive.
+
+This current attempt is starting from what is known before moving toward the unknown, working from datasets recovered from live animals.
 
 ## Project structure
 
@@ -140,9 +174,10 @@ This repository is focused on dataset collection and model prototyping. The next
 ## Project goals
 
 - Capture labeled IMU data on-device
-- Build a TinyML workflow for human activity and fall detection
+- Build a TinyML workflow for activity and fall detection
+- Adapt the pipeline for veterinary recovery and distress monitoring
 - Enable efficient int8 inference on Arduino hardware
-- Support future extension to UCI-HAR style activity classes
+- Support future extension to animal-activity and orthopedic rehabilitation use cases
 
 
 
